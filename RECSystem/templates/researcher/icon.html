@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Settings</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      body {
+        background: url("/static/images/uic-background.jpg") fixed;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      header {
+        background-image: linear-gradient(to right, rgb(248, 49, 82), rgb(255, 183, 201));
+        height: 100px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        margin-top: 250px;
+      }
+
+      li {
+        margin: 1rem 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      a:hover {
+        color: red;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <header></header>
+
+    <ul>
+      <li><a href="{% url 'home' %}" class="menus">Home</a></li>
+      <li><a href="{% url 'profile' %}">My Account</a></li>
+      <li><a href="{% url 'login' %}">Logout</a></li>
+    </ul>
+    
+  </body>
+</html>

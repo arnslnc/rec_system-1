@@ -1,0 +1,116 @@
+{% load static %}
+{% include 'RECSystem/includes/message.html' %}
+<style>
+    body {
+        background: url("/static/images/uic-background.jpg") fixed;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 90px; /* add padding to push content below header */
+      }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  form > div {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  label {
+    font-weight: bold;
+    margin-right: 10px;
+    width: 200px; /* set width of label to align with input */
+  }
+  input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    flex: 1; /* use flexbox to fill remaining width */
+  }
+  button {
+    background-color: #CD104D;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    padding: 10px;
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+  }
+  button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .header{
+    background-color:#CD104D;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    height: 10px;
+}
+.header #icons{
+    height: 50px;
+    justify-content: space-between 100px;
+}
+.header .menus{
+    color: whitesmoke;
+    text-decoration-line: none;
+    font-weight: bolder;
+    word-spacing: 40px;
+}
+.header .menus:hover{
+    color: black;
+    text-decoration-line: none;
+    font-weight: bolder;
+    word-spacing: 40px;
+}
+.header .navbar a {
+    font-size: 22px;
+    margin-left: 2rem;
+}
+#cntctUs span{
+    margin-left: 10px;
+}
+</style>
+<header>
+    <div class="header">
+      <nav class="navbar">
+        <a href="{% url 'home' %}" class="menus">Home</a>
+        <a href="" class="menus">About</a>
+        <a href="" class="menus" id="cntctUs">Contact<span>Us</span></a>
+      </nav>
+      <div class="icons">
+        <img src="../static/images/notification-icon.png" alt="" id="icons">
+        <a href="{% url 'icon' %}">
+          <img src="../static/images/user-icon.png" alt="" id="icons">
+        </a>
+      </div>
+    </div>
+  </header>
+<form method="post" action="{% url 'newPass' %}">
+  {% csrf_token %}
+  <div>
+    <label for="password">Old Password:</label>
+    <input type="password" name="password" id="password" required>
+  </div>
+  <div>
+    <label for="new_pass">New Password:</label>
+    <input type="password" name="new_pass" id="new_pass" required>
+  </div>
+  <div>
+    <label for="confnew_pass">Confirm New Password:</label>
+    <input type="password" name="confnew_pass" id="confnew_pass" required>
+  </div>
+  <button type="submit">Change Password</button>
+</form>

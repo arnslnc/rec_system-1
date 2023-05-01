@@ -37,7 +37,43 @@ def user_login(request):
     
 # Home Page
 def home(request):
-    return render(request, 'researcher\home.html') 
+    return render(request, 'researcher\home.html')
+
+# User Settings
+def icon(request):
+    return render(request, 'researcher\icon.html') 
+
+# Profile
+def profile(request):
+    
+    user = Researcher.objects.all()
+    
+    return render(request, "researcher\profile.html", {'user': user})
+
+# Pass    
+def newPass(request):
+   
+    if request.method == 'POST':
+        password = request.POST['password']
+        new_pass = request.POST['new_pass']
+        confnew_pass = request.POST['confnew_pass']
+        
+        if Researcher.objects.filter(password=password).exists():
+            if new_pass == confnew_pass:
+                # Get the first Researcher object with the given password
+                researcher = Researcher.objects.filter(password=password).first()
+                # Update the password field
+                researcher.password = new_pass
+                # Save the changes to the database
+                researcher.save()
+                
+                messages.success(request, 'Password successfully changed')
+                return redirect('profile')                 
+        else:
+            messages.error(request, 'Password Incorrect/Do not Match')
+            return render(request, 'researcher/newPass.html')      
+    # Return the newPass.html template for GET requests
+    return render(request, 'researcher/newPass.html')
 
 # Submit Manuscript Pages
 def submit_bscReq(request):
