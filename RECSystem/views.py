@@ -43,13 +43,9 @@ def home(request):
 def icon(request):
     return render(request, 'researcher\icon.html') 
 
-# Profile
-def profile(request):
-    
-    user = Researcher.objects.all()
-    
-    return render(request, "researcher\profile.html", {'user': user})
-
+# Success
+def successful(request):
+        return render(request, 'researcher\successful.html') 
 # Pass    
 def newPass(request):
    
@@ -67,8 +63,7 @@ def newPass(request):
                 # Save the changes to the database
                 researcher.save()
                 
-                messages.success(request, 'Password successfully changed')
-                return redirect('profile')                 
+                return redirect('successful')                 
         else:
             messages.error(request, 'Password Incorrect/Do not Match')
             return render(request, 'researcher/newPass.html')      
