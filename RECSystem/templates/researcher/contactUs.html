@@ -1,16 +1,15 @@
-<!-- LOGIN PAGE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UIC REC - Home</title>
+    <title>UIC REC - Contact Us</title>
 
-    <link rel="stylesheet" href="../../static/css/researcher/home.css">
+    <link rel="stylesheet" href="RECSystem/static/css/researcher/contactUs.css">
 </head>
 
-<!-- home section start -->
+<!-- contact us section start -->
 {% load static %}
 <body>
     <header>
@@ -28,16 +27,23 @@
             </div>
         </div>
     </header>
-    {% include 'RECSystem/includes/message.html' %}
     <div class="container">
-        <a href="{% url 'basic-requirements' %}">
-            <img src="../static/images/submit.png" alt="Submit Manuscript">
-            <h3>Submit Manuscript for Ethics Review</h3>
-        </a>
-        <a href="#">
-            <img src="../static/images/find.png" alt="Find/Check Manuscript">
-            <h3>Check Status of Manuscript</h3>
-        </a>
-    </div>
+        <p>CONTACT US</p>
+        
+        <div class="login">
+          <input type="text" placeholder="Your Name" class="input">
+          <input type="text" placeholder="Your Email Address" class="input">
+        </div>
+        
+        <div class="subject">
+          <input type="text" placeholder="Subject" class="input">
+        </div>
+        
+        <div class="msg">
+          <textarea  class="area" placeholder="Leave a Message"></textarea>
+        </div>
+        
+        <div class="btn">Send Message</div>
+      </div>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIC REC - About Us</title>
+
+    <link rel="stylesheet" href="RECSystem/static/css/researcher/aboutUs.css">
+</head>
+
+<!-- about us section start -->
+{% load static %}
+<body>
+    <header>
+        <div class="header">
+            <nav class="navbar">
+                <a href="{% url 'home' %}" class="menus">Home</a>
+                <a href="{% url 'aboutUs' %}" class="menus">About</a>
+                <a href="{% url 'contactUs' %}" class="menus" id="cntctUs">Contact<span>Us</span></a>
+            </nav>
+            <div class="icons">
+                <img src="../static/images/notification-icon.png" alt="" id="icons">
+                <a href="{% url 'icon' %}">
+                    <img src="../static/images/user-icon.png" alt="" id="icons">
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>ABOUT UIC REC</h1>
+        <h3 align="justify">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur laoreet, justo at pulvinar condimentum, purus velit commodo diam, at fringilla dui felis sit amet purus. Ut aliquet congue ipsum, ut ullamcorper augue imperdiet a. Curabitur et diam a quam suscipit tincidunt vel sed lectus. Phasellus dignissim justo ipsum, sed sodales velit venenatis et. Proin finibus commodo tortor, vel suscipit mi viverra vel. Maecenas sodales enim in velit gravida, vitae pretium tortor tempor. Phasellus mattis quis neque quis lobortis. Maecenas blandit tristique augue ac porttitor. Nam pretium semper neque eu sollicitudin.
+
+Nunc in dolor enim. Cras viverra nulla sapien, id imperdiet tellus elementum ac. Vestibulum quis efficitur tellus, vitae cursus turpis. Vivamus aliquet porttitor sapien, sed viverra elit varius id. Pellentesque ante felis, efficitur a aliquam ut, pellentesque a nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla posuere ante eget lacus fermentum malesuada sed et dolor.
+        </h3>
+    </div>
+</body>
+</html>
