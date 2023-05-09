@@ -8,8 +8,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('', views.user_login, name='login'),
     path('home/', views.home, name='home'),
-    path('aboutUs/', views.home, name='aboutUs'),
-    path('contactUs/', views.home, name='contactUs'),
+    path('aboutUs/', views.aboutUs, name='aboutUs'),
+    path('contactUs/', views.contactUs, name='contactUs'),
     path('icon/', views.icon, name='icon'),
     path('successful/', views.successful, name='successful'),
     path('profile/newPass', views.newPass, name='newPass'),

@@ -41,11 +41,12 @@ def home(request):
 
 # About Us
 def aboutUs(request):
-    return render(request, 'researcher\aboutUs.html')
+    return render(request, 'researcher\\aboutUs.html')
 
 # Contact Us
 def contactUs(request):
     return render(request, 'researcher\contactUs.html')
+
 # User Settings
 def icon(request):
     return render(request, 'researcher\icon.html') 
